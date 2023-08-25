@@ -7,5 +7,4 @@ class Node
   def data
     @data
   end
-
 end
