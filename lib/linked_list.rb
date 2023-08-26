@@ -17,6 +17,21 @@ class LinkedList
     end
     data
   end
+  def prepend(data)
+    new_node = Node.new(data)
+    new_node.next_node = @head
+    @head = new_node
+  end
+  def insert(position, data)
+    current_node = @head
+    (position - 1).times do
+      return "List not long enough" if current_node.nil?
+      current_node = current_node.next_node
+    end
+    new_node = Node.new(data)
+    new_node.next_node = current_node.next_node
+    current_node.next_node = new_node
+  end
   def count
     current_node = @head
     count = 0
@@ -27,8 +42,16 @@ class LinkedList
     end
     count
   end
+
   def to_string
     current_node = @head 
-    current_node.data.to_s
+    elements = []
+    while current_node
+      elements << current_node.data
+      current_node = current_node.next_node
+    end
+    elements.join(" ")
+    #need clarification on how this works 
   end
+
 end
