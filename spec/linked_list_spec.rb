@@ -45,11 +45,12 @@ RSpec.describe LinkedList do
       @list.append("doop")
       expect(@list.count).to eq(1)
     end
-    it 'will have one node in the list' do
+    it 'will have two nodes in the list' do
       @list.append("doop")
       @list.append("deep")
       expect(@list.count).to eq(2)
     end
+    
   end
   describe '#to_string' do
     it "willchange the node to a string" do

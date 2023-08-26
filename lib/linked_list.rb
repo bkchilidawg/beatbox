@@ -4,15 +4,16 @@ class LinkedList
     @head = nil 
   end
   def append(data)
+    next_node = @next_node
     if @head.nil?
      @head = Node.new(data)
-    else last_node = @head
-      last_node.next_node
-      while last_node.next_node.nil?
-        last_node = last_node.next_node
+    else current_node = @head
+      current_node.next_node
+      while !current_node.next_node.nil?
+        current_node = current_node.next_node
         #get clarification on the psuedocode
       end
-      last_node.next_node = Node.new(data)
+      current_node.next_node = Node.new(data)
     end
     data
   end
