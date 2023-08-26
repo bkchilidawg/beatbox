@@ -34,10 +34,12 @@ RSpec.describe LinkedList do
       expect(@list.head.next_node).to eq(nil)
     end
     it 'appends a new piece of data' do
-      @list.append("deep")
-      expect(@list.head.data).to eq("deep")
+      @list.append("doop")
+      expect(@list.head.data).to eq("doop")
       expect(@list.head.next_node).to eq(nil)
-      expect(@list.head).to be_a Node
+      @list.append("deep")
+      expect(@list.head.next_node.data).to eq("deep")
+      expect(@list.head.next_node.next_node).to eq(nil)
     end
   end
   describe '#count' do
@@ -53,9 +55,14 @@ RSpec.describe LinkedList do
     
   end
   describe '#to_string' do
-    it "willchange the node to a string" do
+    it "will change the node to a string" do
       @list.append("doop")
       expect(@list.to_string).to eq("doop")
+    end
+    it "will change all the nodes to a string" do
+      @list.append("doop")
+      @list.append("deep")
+      expect(@list.to_string).to eq("doop deep")
     end
   end
 end

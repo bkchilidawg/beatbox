@@ -28,7 +28,7 @@ class LinkedList
     count
   end
   def to_string
-    current_node = @head
+    current_node = @head 
     current_node.data.to_s
   end
 end
