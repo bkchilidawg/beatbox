@@ -2,29 +2,48 @@ require "./lib/linked_list"
 require "./lib/node"
 require 'pry'
 
-RSpec.describe Linked_List do
+RSpec.describe LinkedList do
   before(:each) do
-    @list = Linked_List.new
+    @list = LinkedList.new
     @node = Node.new("plop")
   end
-  it 'instantiate a new Linked_list object' do 
+  describe '#initialize' do
+    it 'instantiate a new Linkedlist object' do 
 
-    expect(@list).to be_a(Linked_List)
-  end 
-  it 'has an attribute called head' do 
+      expect(@list).to be_a(LinkedList)
+    end
+  end
+     
+  describe "#head" do
+    it 'starts with no head' do 
 
-    expect(@list.head).to eq(nil)
+      expect(@list.head).to eq(nil)
+    end
   end
   describe "#append" do  
-    it 'has a method called append' do
-      @list.append("doop")
-
-      expect(@list.append("doop")).to be_a(Linked_List)
+    it 'adds a new piece of data (data can really be anything) to the list' do
     end
     it 'fills the head with data' do
       @list.append("doop")
-
       expect(@list.head.data).to eq("doop")
+      expect(@list.head.next_node).to eq(nil)
+      expect(@list.head).to be_a Node
+    end
+    it 'will make the next node empty' do
+      @list.append("doop")
+      expect(@list.head.next_node).to eq(nil)
+    end
+  end
+  describe '#count' do
+    it 'will have one node in the list' do
+      @list.append("doop")
+      expect(@list.count).to eq(1)
+    end
+  end
+  describe '#to_string' do
+    it "willchange the node to a string" do
+      @list.append("doop")
+      expect(@list.to_string).to eq("doop")
     end
   end
 end

@@ -1,4 +1,4 @@
-class Linked_List
+class LinkedList
   attr_reader :head
   def initialize
     @head = nil 
@@ -8,11 +8,25 @@ class Linked_List
      @head = Node.new(data)
     else last_node = @head
       last_node.next_node
-      until last_node.next_node.nil?
+      while last_node.next_node.nil?
         last_node = last_node.next_node
       end
+      last_node.next_node = Node.new(data)
     end
-
+    data
   end
-
+  def count
+    @current_node = @head
+    count = 0
+    
+    while @current_node 
+      count += 1
+      @current_node = @current_node.next_node
+    end
+    count
+  end
+  def to_string
+    @current_node = @head
+    @current_node.data.to_s
+  end
 end
