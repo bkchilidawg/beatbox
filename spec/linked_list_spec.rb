@@ -33,11 +33,22 @@ RSpec.describe LinkedList do
       @list.append("doop")
       expect(@list.head.next_node).to eq(nil)
     end
+    it 'appends a new piece of data' do
+      @list.append("deep")
+      expect(@list.head.data).to eq("deep")
+      expect(@list.head.next_node).to eq(nil)
+      expect(@list.head).to be_a Node
+    end
   end
   describe '#count' do
-    it 'will have one node in the list' do
+    it 'will have count number of node in the list' do
       @list.append("doop")
       expect(@list.count).to eq(1)
+    end
+    it 'will have one node in the list' do
+      @list.append("doop")
+      @list.append("deep")
+      expect(@list.count).to eq(2)
     end
   end
   describe '#to_string' do

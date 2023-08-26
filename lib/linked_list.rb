@@ -10,6 +10,7 @@ class LinkedList
       last_node.next_node
       while last_node.next_node.nil?
         last_node = last_node.next_node
+        #get clarification on the psuedocode
       end
       last_node.next_node = Node.new(data)
     end
