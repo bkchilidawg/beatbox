@@ -51,8 +51,7 @@ RSpec.describe LinkedList do
       @list.append("doop")
       @list.append("deep")
       expect(@list.count).to eq(2)
-    end
-    
+    end 
   end
   describe '#to_string' do
     it "will change the node to a string" do
@@ -69,25 +68,21 @@ RSpec.describe LinkedList do
     it 'will append "plop" and "suu" to the list and convert to a string' do
       @list.append("plop")
       @list.append("suu")
-
       expect(@list.to_string).to eq("plop suu")
     end
     it "will create a new head" do
       @list.append("plop")
       @list.append("suu")
       @list.prepend("dop")
-
       expect(@list.to_string).to eq("dop plop suu")
     end
   end
-
   describe '#insert' do
     it 'will inseert data in a specified node' do
       @list.append("plop")
       @list.append("suu")
       @list.prepend("dop")
       @list.insert(1, "woo")
-
       expect(@list.to_string).to eq("dop woo plop suu")
     end
   end
@@ -99,6 +94,17 @@ RSpec.describe LinkedList do
       @list.append("shu")
       @list.append("blop")
       expect(@list.to_string).to eq("deep woo shi shu blop")
+    end
+    it 'will find data in certain nodes and certain nodes after' do
+      @list.append("deep")
+      @list.append("woo")
+      @list.append("shi")
+      @list.append("shu")
+      @list.append("blop")
+
+      expect(@list.find(2, 1)).to eq("shi")
+      expect(@list.find(1, 3)).to eq("woo shi shu")
+
     end
   end
 end

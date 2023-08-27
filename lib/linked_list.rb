@@ -42,7 +42,6 @@ class LinkedList
     end
     count
   end
-
   def to_string
     current_node = @head 
     elements = []
@@ -53,5 +52,18 @@ class LinkedList
     elements.join(" ")
     #need clarification on how this works 
   end
-
+  def find(start_position, count)
+    current_node = @head
+    (start_position).times do
+      return nill if current_node.nil?
+      current_node = current_node.next_node
+    end
+    elements = []
+    count.times do
+      break if current_node.nil?
+        elements << current_node.data
+        current_node = current_node.next_node
+    end
+    elements.join(" ")
+  end
 end
