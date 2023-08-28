@@ -129,5 +129,15 @@ RSpec.describe LinkedList do
 
       expect(@list.pop).to eq("blop")
     end
+    it 'will remove the last node and return it' do
+      @list.append("deep")
+      @list.append("woo")
+      @list.append("shi")
+      @list.append("shu")
+      @list.append("blop")
+
+      expect(@list.pop).to eq("blop")
+      expect(@list.pop).to eq("shu")
+    end
   end
 end
