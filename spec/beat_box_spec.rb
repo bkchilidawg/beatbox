@@ -13,5 +13,7 @@ RSpec.describe BeatBox do
    it 'will create a BeatBox class'do
     expect(@bb).to be_a(BeatBox)
     end
+    it "will include a list"
+    expect(@bb.list).to eq(@list)
   end
 end
