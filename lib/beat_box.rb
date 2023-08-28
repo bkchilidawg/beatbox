@@ -19,7 +19,7 @@ class BeatBox
     beats = @list.to_string
     beats = beats.split(" ")
     beats.select do |beat|
-      `say -r 500 -v Boing #{beat}`
+      `say -r 500 -v Cellos #{beat}`
     end
   end
 

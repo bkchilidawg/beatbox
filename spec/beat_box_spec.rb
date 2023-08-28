@@ -42,7 +42,7 @@ RSpec.describe BeatBox do
   describe '#say' do
     it "will play the beats" do
       @bb.append("deep doo ditt woo hoo shu")
-      expect(@bb.play).to eq(`say -r 500 -v Boing #{beats}`)
+      expect(@bb.play).to eq(`say -r 500 -v Cellos #{beats}`)
     end
 
   end
