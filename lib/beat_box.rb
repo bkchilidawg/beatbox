@@ -16,7 +16,11 @@ class BeatBox
     @list.count
   end
   def play
-    beats = @bb.list
+    beats = @list.to_string
+    beats = beats.split(" ")
+    beats.select do |beat|
+      `say -r 500 -v Boing #{beat}`
+    end
   end
 
 end
