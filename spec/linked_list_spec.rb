@@ -107,4 +107,15 @@ RSpec.describe LinkedList do
 
     end
   end
+  describe '#includes?' do
+    it 'will find out if the current list includes a certain data' do
+      @list.append("deep")
+      @list.append("woo")
+      @list.append("shi")
+      @list.append("shu")
+      @list.append("blop")
+
+      expect(@list.includes?("deep")).to eq(true)
+    end
+  end
 end
