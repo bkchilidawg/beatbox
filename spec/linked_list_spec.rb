@@ -115,8 +115,8 @@ RSpec.describe LinkedList do
       @list.append("shu")
       @list.append("blop")
 
-      expect(@list.includes?("deep")).to eq(true)
-      expect(@list.includes?("dep")).to eq(false)
+      expect(@list.includes?("deep")).to be true
+      expect(@list.includes?("dep")).to be false
     end
   end
   describe'#pop' do
