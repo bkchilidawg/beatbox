@@ -78,7 +78,6 @@ class LinkedList
     return nil if head.nil?
     if @head.next_node.nil?
         data = @head.data
-        @head = nil
         return data
     end
     current_node = @head
