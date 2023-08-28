@@ -15,7 +15,7 @@ class BeatBox
   def count 
     @list.count
   end
-  #def play
+  def play
     beats = @bb.list
   end
 
