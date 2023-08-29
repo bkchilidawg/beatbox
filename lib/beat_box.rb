@@ -16,11 +16,12 @@ class BeatBox
     @list.count
   end
   def play
-    beats = @list.to_string
-    beats = beats.split(" ")
+    beats = list.to_string
+    beats = beats.split
     beats.select do |beat|
       `say -r 500 -v Cellos #{beat}`
     end
+    beats.join(" ")
   end
 
 end
