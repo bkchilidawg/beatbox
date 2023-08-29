@@ -12,7 +12,6 @@ class LinkedList
       current_node.next_node
       while !current_node.next_node.nil?
         current_node = current_node.next_node
-        #get clarification on the psuedocode
       end
       current_node.next_node = Node.new(data)
     end
