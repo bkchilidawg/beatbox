@@ -34,16 +34,15 @@ RSpec.describe BeatBox do
   end
   describe '#count' do
     it 'will count the number of nodes' do
-    @bb.append("deep doo ditt")
-    @bb.append("woo hoo shu")
-    expect(@bb.count).to  eq(6)
+      @bb.append("deep doo ditt")
+      @bb.append("woo hoo shu")
+      expect(@bb.count).to  eq(6)
     end
   end
   describe '#say' do
     it "will play the beats" do
       @bb.append("deep doo ditt woo hoo shu")
-      expect(@bb.play).to eq(`say -r 500 -v Cellos #{beats}`)
+      expect(@bb.play).to eq("deep doo ditt woo hoo shu")
     end
-
   end
 end
